@@ -4,6 +4,9 @@
   "type": "module",
   "name": "portfolio-djimmy-allard",
   "description": "Portfolio Djimmy Allard",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build"
