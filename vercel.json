@@ -6,9 +6,5 @@
     "api/send-email.ts": {
       "runtime": "nodejs18.x"
     }
-  },
-  "env": {
-    "GMAIL_USER": "@gmail_user",
-    "GMAIL_PASS": "@gmail_pass"
   }
 }
