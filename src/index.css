@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme (default) - Noir comme avant */
+    --color-background: 210 10% 12%;
+    --color-foreground: 0 0% 100%;
+    --color-primary: 183 85% 56%;
+    --color-primary-foreground: 0 0% 100%;
+    --color-secondary: 183 55% 46%;
+    --color-secondary-foreground: 0 0% 100%;
+    --color-tertiary: 313 85% 62%;
+    --color-tertiary-foreground: 0 0% 100%;
+    --color-neutral: 210 10% 12%;
+    --color-neutral-foreground: 0 0% 100%;
+    --color-success: 152 60% 45%;
+    --color-success-foreground: 0 0% 100%;
+    --color-warning: 35 90% 55%;
+    --color-warning-foreground: 0 0% 100%;
+    --color-muted: 210 12% 18%;
+    --color-muted-foreground: 210 13% 80%;
+    --color-accent: 313 85% 62%;
+    --color-accent-foreground: 0 0% 100%;
+    --color-destructive: 0 84% 60%;
+    --color-destructive-foreground: 0 0% 100%;
+    --color-border: 210 12% 18%;
+    --color-input: 210 12% 18%;
+    --color-ring: 183 85% 56%;
+    --color-card: 210 12% 14%;
+    --color-card-foreground: 0 0% 100%;
+    --color-popover: 210 12% 14%;
+    --color-popover-foreground: 0 0% 100%;
+    
+    --font-sans: "Inter", sans-serif;
+    --font-headline: "Space Grotesk", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+    
+    --radius: 8px;
+  }
+
+  .dark {
+    --color-background: 210 10% 12%;
+    --color-foreground: 0 0% 100%;
+    --color-primary: 183 85% 56%;
+    --color-primary-foreground: 0 0% 100%;
+    --color-secondary: 183 55% 46%;
+    --color-secondary-foreground: 0 0% 100%;
+    --color-tertiary: 313 85% 62%;
+    --color-tertiary-foreground: 0 0% 100%;
+    --color-neutral: 210 10% 12%;
+    --color-neutral-foreground: 0 0% 100%;
+    --color-success: 152 60% 45%;
+    --color-success-foreground: 0 0% 100%;
+    --color-warning: 35 90% 55%;
+    --color-warning-foreground: 0 0% 100%;
+    --color-muted: 210 12% 18%;
+    --color-muted-foreground: 210 13% 80%;
+    --color-accent: 313 85% 62%;
+    --color-accent-foreground: 0 0% 100%;
+    --color-destructive: 0 84% 60%;
+    --color-destructive-foreground: 0 0% 100%;
+    --color-border: 210 12% 18%;
+    --color-input: 210 12% 18%;
+    --color-ring: 183 85% 56%;
+    --color-card: 210 12% 14%;
+    --color-card-foreground: 0 0% 100%;
+    --color-popover: 210 12% 14%;
+    --color-popover-foreground: 0 0% 100%;
+  }
+
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+
+  @media (min-width: 768px) {
+    body, * {
+      cursor: none !important;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+    @apply text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient-1 {
+    background: linear-gradient(135deg, hsl(183, 85%, 56%), hsl(313, 85%, 62%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+
+
+  /* Dark theme utilities remain the same */
+  .dark .shadow-glow {
+    box-shadow: 0 0 20px hsl(183, 85%, 56% / 0.3);
+  }
+
+  .dark .shadow-glow-lg {
+    box-shadow: 0 0 40px hsl(183, 85%, 56% / 0.4);
+  }
+}
